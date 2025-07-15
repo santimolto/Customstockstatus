@@ -1,21 +1,18 @@
 {
-    "name": "santi/customstockstatus",
-    "description": "Custom stock status attribute and Hyvä-compatible frontend",
-    "type": "magento2-module",
-    "version": "1.0.0",
-    "license": [
-        "OSL-3.0",
-        "AFL-3.0"
-    ],
-    "autoload": {
-        "files": [
-            "registration.php"
-        ],
-        "psr-4": {
-            "Santi\\Customstockstatus\\": ""
-        }
+  "name": "santi/customstockstatus",
+  "description": "Custom stock status module compatible with Hyvä",
+  "type": "magento2-module",
+  "version": "1.0.0",
+  "license": ["OSL-3.0", "AFL-3.0"],
+  "autoload": {
+    "psr-4": {
+      "Santi\\Customstockstatus\\": ""
     },
-    "require": {
-        "php": ">=7.4"
-    }
+    "files": [
+      "registration.php"
+    ]
+  },
+  "require": {
+    "php": ">=7.4"
+  }
 }
