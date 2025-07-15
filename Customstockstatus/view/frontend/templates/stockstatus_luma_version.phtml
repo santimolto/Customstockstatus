@@ -1,0 +1,21 @@
+<?php
+use Magento\Framework\App\ObjectManager;
+use Magento\CatalogInventory\Api\StockRegistryInterface;
+
+$product = $block->getProduct() ?? $block->getData('product');
+if (!$product || !$product->getId()) return;
+
+$stockStatus = $product->getCustomStockStatus();
+$stockRegistry = ObjectManager::getInstance()->get(StockRegistryInterface::class);
+$stockItem = $stockRegistry->getStockItem($product->getId());
+$qty = $stockItem && $stockItem->getItemId() ? (int)$stockItem->getQty() : null;
+
+if ($stockStatus) {
+    if ($qty !== null && strpos($stockStatus, '{qty}') !== false) {
+        $translated = str_replace('{qty}', $qty, ('{qty} en stock'));
+        echo "<div class='custom-stock-status'>{$translated}</div>";
+    } else {
+        echo "<div class='custom-stock-status'>" . ($stockStatus) . "</div>";
+    }
+}
+?>
