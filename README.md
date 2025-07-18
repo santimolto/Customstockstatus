@@ -28,7 +28,7 @@ Agrega en `composer.json`:
 ```json
 "repositories": {
   "santi-customstockstatus": {
-    "type": "vcs",
+    "type": "git",
     "url": "https://github.com/santimolto/Customstockstatus.git"
   }
 }
@@ -48,7 +48,7 @@ Para que el mensaje de stock se muestre correctamente en Hyvä, hay que realizar
 ### 1. Modificar `catalog_product_view_type_simple.xml`
 
 Ubicado en:  
-`app/code/Santi/Customstockstatus/view/frontend/layout/catalog_product_view_type_simple.xml`
+`app/design/frontend/Mb/Hyva2/Magento_Catalog/layout/catalog_product_view_type_simple.xml`
 
 Agrega el bloque justo debajo del contenedor de precio:
 
@@ -71,7 +71,7 @@ Agrega el bloque justo debajo del contenedor de precio:
 Ubica el archivo:
 
 ```
-app/design/frontend/Vendor/Hyva/Magento_Catalog/templates/product/view/price.phtml
+app/design/frontend/Mb/Hyva2/Magento_Catalog/templates/product/view/price.phtml
 ```
 
 Agrega donde desees que se renderice el stock personalizado, por ejemplo justo después del precio:
